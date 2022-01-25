@@ -1,18 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {DepartemenService} from "../services/departemen.service";
 import {Departemen} from "../model/departemen";
+import {CategoryService} from "../services/category.service";
+import {Category} from "../model/Category";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [DepartemenService]
+  providers: [DepartemenService, CategoryService]
 })
 export class HomeComponent implements OnInit {
 
   listDept!: Departemen[];
+  listCat!: Category[];
 
-  constructor(private dept: DepartemenService) {
+  constructor(private dept: DepartemenService , private cat: CategoryService ) {
   }
 
   ngOnInit(): void {
@@ -26,8 +29,22 @@ export class HomeComponent implements OnInit {
     }
   ,
     complete: () => {
-      alert("Selamat datang di Neraka")
+      console.log()
     }
   })
+
+    this.cat.listCategory().subscribe({
+      next: hasil => {
+        this.listCat = hasil
+      },
+      error: error=>
+      {
+        console.log(error)
+      }
+      ,
+      complete: () => {
+        console.log()
+      }
+    })
   }
 }

@@ -1,8 +1,43 @@
-<p>home works!!</p>
-<table>
-  <tr *ngFor="let id of listDept">
-    <td>{{id.id}}</td>
-    <td>{{id.nama}}</td>
-    <td>{{id.deskripsi}}</td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col p-7">
+    <h2>Department</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let id of listDept">
+        <td>{{id.id}}</td>
+        <td>{{id.nama}}</td>
+        <td>{{id.description}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col p-7">
+    <h2>Category</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Department</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let id of listCat">
+        <td>{{id.id}}</td>
+        <td>{{id.nama}}</td>
+        <td>{{id.description}}</td>
+        <td>{{id.departmentt}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

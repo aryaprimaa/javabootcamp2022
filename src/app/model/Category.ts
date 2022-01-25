@@ -1,5 +1,6 @@
-export class Departemen {
+export class Category {
   id! : number;
   nama! : string;
   description!: string;
+  departmentt!: number;
 }

@@ -8,13 +8,17 @@ import { AboutComponent } from './about/about.component';
 import {HttpClientModule} from "@angular/common/http";
 import { DepartmentComponent } from './department/department.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { DeptindukComponent } from './deptinduk/deptinduk.component';
+import { DeptchildComponent } from './deptchild/deptchild.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    DeptindukComponent,
+    DeptchildComponent
   ],
     imports: [
         BrowserModule,

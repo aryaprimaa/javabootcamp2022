@@ -22,6 +22,8 @@ export class DepartemenService {
     let url = '/department/savedept';
     if (dept.id){
       url = '/department/updatedept';
+      return this.http.put(environment.baseUrl+url,dept)
+        .pipe(map(data => data))
     }
     return this.http.post(environment.baseUrl+url,dept)
       .pipe(map(data => data))
@@ -34,6 +36,6 @@ export class DepartemenService {
         id: department.id
       }
     }
-    return this.http.delete(environment.baseUrl+'/delete/{reqid}',options).pipe(map(data=>data))
+    return this.http.delete(environment.baseUrl+'/delete/',options).pipe(map(data=>data))
   }
 }

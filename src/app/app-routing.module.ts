@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {AboutComponent} from "./about/about.component";
 import {DepartmentComponent} from "./department/department.component";
-// import {MessageParentComponent} from "./deptinduk/deptinduk.component";
-import {Departemen} from "./model/departemen";
+import {MessageParentComponent} from "./message-parent/message-parent.component";
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
@@ -12,7 +11,7 @@ const routes: Routes = [
   {path:'about', component: AboutComponent},
   {path:'editdept/:id', component:DepartmentComponent},
   {path:'delete/:id', component:DepartmentComponent},
-  // {path:'message',component:MessageParentComponent},
+  {path:'message',component:MessageParentComponent}
 ];
 
 @NgModule({

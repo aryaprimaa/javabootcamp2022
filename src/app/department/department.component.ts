@@ -27,6 +27,8 @@ export class DepartmentComponent implements OnInit {
     })
     this.formDeptDelete = this.formBuild.group({
       'id': new FormControl(null, [Validators.pattern("^[0-9]*$")]),
+      'name':new FormControl(null, [Validators.required]),
+      'description':new FormControl(null, [Validators.required]),
     })
 
   }
@@ -34,7 +36,15 @@ export class DepartmentComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(parameter => {
       this.id = parameter["id"];
-
+      if (this.id) {
+        this.deptser.getById(this.id).subscribe({
+          next: value => {
+            this.form.controls['id'].setValue(this.id);
+            this.form.controls['name'].setValue(value.name);
+            this.form.controls['description'].setValue(value.description);
+          }
+        })
+      }
     })
   }
 

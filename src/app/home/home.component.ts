@@ -59,11 +59,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  deletee(id: number): void {
+  delete(id: number): void {
     let dept = <Departemen>{};
     dept.id = id;
     console.log(dept);
-    this.dept.deleteDept(dept).subscribe({
+    this.deptser.deleteDept(dept).subscribe({
       next: hasil => {
         console.log(hasil.status)
       },

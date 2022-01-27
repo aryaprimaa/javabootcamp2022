@@ -16,17 +16,21 @@ export class DepartemenService {
     return this.http.get(environment.baseUrl+'/department/listdept')
       .pipe(map(data => data))
   }
-
+  getById(id:String): Observable<any>{
+    return this.http.get(environment.baseUrl+'/departments/'+id)
+      .pipe(map(data=>data))
+  }
   savedept({dept}: { dept: any }): Observable<any>{
     console.log(dept)
     let url = '/department/savedept';
-    if (dept.id){
+    if (dept.id) {
       url = '/department/updatedept';
-      return this.http.put(environment.baseUrl+url,dept)
+      return this.http.put(environment.baseUrl + url, dept)
+        .pipe(map(data => data))
+    } else {
+      return this.http.post(environment.baseUrl + url, dept)
         .pipe(map(data => data))
     }
-    return this.http.post(environment.baseUrl+url,dept)
-      .pipe(map(data => data))
   }
 
   deleteDept(department:Departemen):Observable<any>{
@@ -36,6 +40,6 @@ export class DepartemenService {
         id: department.id
       }
     }
-    return this.http.delete(environment.baseUrl+'/delete/',options).pipe(map(data=>data))
+    return this.http.delete(environment.baseUrl+'/department/delete',options).pipe(map(data=>data))
   }
 }

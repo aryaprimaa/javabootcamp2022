@@ -7,9 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import {HttpClientModule} from "@angular/common/http";
 import { DepartmentComponent } from './department/department.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { DeptindukComponent } from './deptinduk/deptinduk.component';
-import { DeptchildComponent } from './deptchild/deptchild.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+// import {MessageParentComponent} from "./deptinduk/deptinduk.component";
+// import {MessageChildComponent} from "./deptchild/deptchild.component";
 
 @NgModule({
   declarations: [
@@ -17,13 +17,14 @@ import { DeptchildComponent } from './deptchild/deptchild.component';
     HomeComponent,
     AboutComponent,
     DepartmentComponent,
-    DeptindukComponent,
-    DeptchildComponent
+    // MessageParentComponent,
+    // MessageChildComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        FormsModule,
         ReactiveFormsModule
     ],
   providers: [],

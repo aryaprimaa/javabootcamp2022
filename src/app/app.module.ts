@@ -10,8 +10,10 @@ import { DepartmentComponent } from './department/department.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MessageChildComponent } from './message-child/message-child.component';
 import { MessageParentComponent } from './message-parent/message-parent.component';
-// import {MessageParentComponent} from "./deptinduk/deptinduk.component";
-// import {MessageChildComponent} from "./deptchild/deptchild.component";
+import { ProductComponent } from './product/product.component';
+import { ProductTableComponent } from './product-table/product-table.component';
+import {DataTablesModule} from "angular-datatables";
+import { ListproductComponent } from './listproduct/listproduct.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +23,17 @@ import { MessageParentComponent } from './message-parent/message-parent.componen
     DepartmentComponent,
     MessageChildComponent,
     MessageParentComponent,
-    // MessageParentComponent,
-    // MessageChildComponent
+    ProductComponent,
+    ProductTableComponent,
+    ListproductComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DataTablesModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,7 +33,7 @@ export class MessageParentComponent implements OnInit {
 
   getChild($event:any): void {
     console.log($event);
-    this.form.controls["nama"].setValue($event.name);
+    this.form.controls["name"].setValue($event.name);
     this.form.controls["message"].setValue($event.message)
   }
 }

@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-3">
+        <div class="mb-6">
+          <label class="form-label text-center">Id</label>
+          <input type="number" class="form-control" name="id" (focusout)="findbyId()" formControlName="id">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-6">
+          <label class="form-label">Qty</label>
+          <input type="number" class="form-control" formControlName="qty">
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="mb-5">
+          <p *ngIf="product">{{product.description}}</p>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="mb-3">
+          <button type="button" (click)="addTrx()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <app-product-table [trx]="trx"></app-product-table>
+</div>

@@ -9,9 +9,11 @@ import {Message} from "../model/message";
 export class MessageChildComponent implements OnInit {
 
   @Output() kirimMessages = new EventEmitter<Message>();
-  @Input() message! : Message
-  listMessage! : Message[]
-  constructor() { }
+  @Input() message!: Message
+  listMessage!: Message[]
+
+  constructor() {
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.listMessage) {
@@ -26,8 +28,11 @@ export class MessageChildComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  edit(i:number):void {
-    this.kirimMessages.emit(this.listMessage[i])
-}
+  edit(i: number): void {
+    this.kirimMessages.emit(this.listMessage[i]);
+  }
 
+  delete(i: number): void {
+    this.kirimMessages.emit(this.listMessage[i])
+  }
 }
